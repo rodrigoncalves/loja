@@ -4,7 +4,12 @@
 	<div class="principal">
 		<p class="alert-danger">Usuário ou senha inválida</p>
 	</div>
-<?php } ?>	
+<?php } else if (isset($_GET['login']) && $_GET['login'] == 1) { ?>
+	<div class="principal">
+		<p class="alert-success">Logado</p>
+	</div>
+<?php } ?>
+
 
 <div class="principal">
 	<h1>Bem vindo!</h1>
