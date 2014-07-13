@@ -1,7 +1,7 @@
 <?php
 include "cabecalho.php";
 include "conecta.php";
-include "categoria-banco.php";
+include "banco-categoria.php";
 include "banco-produto.php";
 
 $id = $_GET['id'];
@@ -55,4 +55,6 @@ $usado = $produto['usado'] ? "checked='checked'" : "";
 	</table>
 </form>
 
-<?php include "rodape.php" ?>
+</div>
+</body>
+</html>

@@ -55,4 +55,6 @@ if (array_key_exists("removido", $_GET) && $_GET['removido']) {
 	?>
 </table>
 
-<?php include "rodape.php";?>
+</div>
+</body>
+</html>

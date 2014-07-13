@@ -5,6 +5,7 @@
 	<title>Loja</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/loja.css">
+	<link rel="icon" type="image/png" href="img/loja-icone.png" />
 </head>
 
 <body>

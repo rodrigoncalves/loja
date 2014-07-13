@@ -27,4 +27,6 @@ if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usad
 }
 ?>
 
-<?php include "rodape.php"; ?>
+</div>
+</body>
+</html>

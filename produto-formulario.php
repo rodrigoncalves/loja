@@ -1,7 +1,10 @@
 <?php
 include "cabecalho.php";
 include "conecta.php";
-include "categoria-banco.php";
+include "banco-categoria.php";
+include "logica-usuario.php";
+
+verificaUsuario();
 
 $categorias = listaCategorias($conexao);
 ?>
@@ -47,4 +50,6 @@ $categorias = listaCategorias($conexao);
 	</table>
 </form>
 
-<?php include "rodape.php" ?>
+</div>
+</body>
+</html>
