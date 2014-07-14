@@ -2,18 +2,31 @@
 include "cabecalho.php";
 include "conecta.php";
 include "banco-produto.php";
-?>
+
+if (isset($_SESSION["danger"])) { ?>
+	<div class="principal">
+		<p class="alert-danger"><?=$_SESSION["danger"]?></p>
+	</div>
+	<?php unset($_SESSION["danger"]);
+}
+
+if (isset($_SESSION["success"])) { ?>
+	<div class="principal">
+		<p class="alert-success"><?=$_SESSION["success"]?></p>
+	</div>
+	<?php unset($_SESSION["success"]);
+} ?>
 
 <div class="principal">
 	<h2>Lista de produtos</h2>
 </div>
 
 <?php 
-if (array_key_exists("removido", $_GET) && $_GET['removido']) {
+// if (array_key_exists("removido", $_GET) && $_GET['removido']) {
 	?>
-	<p class="alert-success">Produto apagado com sucesso!</p>
-	<?php 
-}
+<!--  	<p class="alert-success">Produto apagado com sucesso!</p> -->
+ 	<?php 
+// }
 ?>
 
 <table class="table table-striped table-bordered">

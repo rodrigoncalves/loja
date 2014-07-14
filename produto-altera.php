@@ -17,7 +17,9 @@ if (array_key_exists('usado', $_POST)) {
 
 if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) {
 	?>
-	<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> alterado com sucesso!</p>
+	<div class="principal">
+		<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> alterado com sucesso!</p>
+	</div>
 	<?php 
 } else {
 	$msg = mysqli_error($conexao);

@@ -1,28 +1,19 @@
 <?php 
 include "cabecalho.php"; 
-include "logica-usuario.php";
 
-if (isset($_GET['logout']) && $_GET['logout'] == true) { ?>
+if (isset($_SESSION["danger"])) { ?>
 	<div class="principal">
-		<p class="alert-success">Usuário desconectado.</p>
+		<p class="alert-danger"><?=$_SESSION["danger"]?></p>
 	</div>
-<?php }
+	<?php unset($_SESSION["danger"]);
+}
 
-if (isset($_GET['login']) && $_GET['login'] == 0) { ?>
+if (isset($_SESSION["success"])) { ?>
 	<div class="principal">
-		<p class="alert-danger">Usuário ou senha inválida</p>
+		<p class="alert-success"><?=$_SESSION["success"]?></p>
 	</div>
-<?php } else if (isset($_GET['login']) && $_GET['login'] == 1) { ?>
-	<div class="principal">
-		<p class="alert-success">Logado</p>
-	</div>
-<?php }
-
-if (isset($_GET['falha']) && $_GET['falha'] == true) { ?>
-	<div class="principal">
-		<p class="alert-danger">Você não tem acesso a essa página!</p>
-	</div>
-<?php } ?>
+	<?php unset($_SESSION["success"]);
+} ?>
 
 
 <div class="text-center">

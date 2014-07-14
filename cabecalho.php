@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include 'logica-usuario.php'; ?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -20,6 +21,9 @@
 					<li><a href="produto-formulario.php">Adicionar Produto</a></li>
 					<li><a href="produto-lista.php">Produtos</a></li>
 					<li><a href="sobre.php">Sobre a empresa</a></li>
+					<?php if (usuarioEstaLogado()) { ?>
+						<li><a href="logout.php">Logout</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
