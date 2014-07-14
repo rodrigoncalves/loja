@@ -3,8 +3,8 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 
-include 'logica-usuario.php';
-include 'mostra-alerta.php'; 
+require_once 'logica-usuario.php';
+require_once 'mostra-alerta.php'; 
 ?>
 
 <html>
@@ -28,6 +28,7 @@ include 'mostra-alerta.php';
 					<li><a href="produto-formulario.php">Adicionar Produto</a></li>
 					<li><a href="produto-lista.php">Produtos</a></li>
 					<li><a href="sobre.php">Sobre a empresa</a></li>
+					<li><a href="contato.php">Contato</a></li>
 					<?php if (usuarioEstaLogado()) { ?>
 						<li><a href="logout.php">Logout</a></li>
 					<?php } ?>

@@ -1,7 +1,6 @@
 <?php
-include "cabecalho.php";
-include "conecta.php";
-include "banco-produto.php";
+require_once "cabecalho.php";
+require_once "banco-produto.php";
 
 verificaUsuario();
 
@@ -15,17 +14,17 @@ if (array_key_exists('usado', $_POST)) {
 	$usado = "false";
 }
 
-if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)) {
-	?>
-	<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> adicionado com sucesso!</p>
-	<?php 
-} else {
+if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)) { ?>
+	<div class="principal">
+		<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> adicionado com sucesso!</p>
+	</div>
+<?php } else {
 	$msg = mysqli_error($conexao);
 	?>
-	<p class="text-danger">Produto <?= $nome ?>, não foi adicionado: <?= $msg?></p>
-	<?php
-}
-?>
+	<div class="principal">
+		<p class="text-danger">Produto <?= $nome ?>, não foi adicionado: <?= $msg?></p>
+	</div>
+<?php } ?>
 
 </div>
 </body>

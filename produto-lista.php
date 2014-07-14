@@ -1,7 +1,6 @@
 <?php
-include "cabecalho.php";
-include "conecta.php";
-include "banco-produto.php";
+require_once "cabecalho.php";
+require_once "banco-produto.php";
 ?>
 
 <div class="principal">
@@ -20,8 +19,7 @@ include "banco-produto.php";
 	</tr>
 	<?php 
 	$produtos = listaProdutos($conexao);
-	foreach ($produtos as $produto) :
-		?>
+	foreach ($produtos as $produto) : ?>
 		<tr>
 			<td><?= $produto['nome'] ?></td>
 			<td>R$ <?= $produto['preco'] ?></td>
@@ -29,11 +27,9 @@ include "banco-produto.php";
 			<td><?= $produto['categoria_nome'] ?></td>
 			<?php if ($produto['usado']) { ?>
 				<td>Sim</td>
-				<?php
-			} else { ?>
+			<?php } else { ?>
 				<td>Não</td>
-				<?php 
-			} ?>
+			<?php } ?>
 			<td><a class="btn btn-primary" href="produto-formulario-altera.php?id=<?=$produto['id']?>">Alterar</a></td>
 			<td>
 				<form action="produto-remove.php" method="post">
@@ -42,9 +38,7 @@ include "banco-produto.php";
 				</form>
 			</td>
 		</tr>
-		<?php
-	endforeach
-	?>
+	<?php endforeach ?>
 </table>
 
 </div>

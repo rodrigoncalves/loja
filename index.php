@@ -1,5 +1,5 @@
 <?php 
-include "cabecalho.php"; 
+require_once "cabecalho.php"; 
 ?>
 
 <div class="text-center">
@@ -10,7 +10,6 @@ include "cabecalho.php";
 	<div class="text-center">
 		<!-- <img src="img/download.jpg" height="100" width="100" alt=""> -->
 		<p class="text-success">Usuário logado como <?=usuarioLogado()?></p>
-		<a href="logout.php">Logout</a>
 	</div>
 <?php } else { ?>
 
@@ -26,9 +25,13 @@ include "cabecalho.php";
 			<td><input class="form-control" type="password" name="senha"></td>
 		</tr>
 		<tr>
-			<td><button class="btn btn-primary">Login</button></td>
+			<td><button class="btn btn-primary">Entrar</button></td>
 		</tr>
 	</table>
+	</form>
+
+	<form action="cadastro-formulario.php">
+		<button class="btn">Cadastrar</button>
 	</form>
 
 <?php } ?>
