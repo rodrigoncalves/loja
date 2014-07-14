@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<?php include 'logica-usuario.php'; ?>
+
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+
+include 'logica-usuario.php';
+include 'mostra-alerta.php'; 
+?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -29,3 +36,8 @@
 		</div>
 	</div>
 	<div class="container">
+
+	<?php 
+	mostraAlerta("success");
+	mostraAlerta("danger");
+	?>

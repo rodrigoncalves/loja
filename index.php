@@ -1,20 +1,6 @@
 <?php 
 include "cabecalho.php"; 
-
-if (isset($_SESSION["danger"])) { ?>
-	<div class="principal">
-		<p class="alert-danger"><?=$_SESSION["danger"]?></p>
-	</div>
-	<?php unset($_SESSION["danger"]);
-}
-
-if (isset($_SESSION["success"])) { ?>
-	<div class="principal">
-		<p class="alert-success"><?=$_SESSION["success"]?></p>
-	</div>
-	<?php unset($_SESSION["success"]);
-} ?>
-
+?>
 
 <div class="text-center">
 	<h1>Bem vindo!</h1>

@@ -15,15 +15,12 @@ if (array_key_exists('usado', $_POST)) {
 }
 
 
-if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) {
-	?>
+if (alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) { ?>
 	<div class="principal">
 		<p class="text-success">Produto <?= $nome ?>, <?= $preco ?> alterado com sucesso!</p>
 	</div>
-	<?php 
-} else {
-	$msg = mysqli_error($conexao);
-	?>
+<?php  } else {
+	$msg = mysqli_error($conexao); ?>
 	<p class="text-danger">Produto <?= $nome ?>, não foi alterado: <?= $msg?></p>
 	<?php
 }
